@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include "Functionality.h"
-
+zxczx
 void CreateInformat(int lowLimit,int highLimit,int counter, char* buff)
 {
   
