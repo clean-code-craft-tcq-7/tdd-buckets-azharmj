@@ -22,7 +22,6 @@ CreateInformat(3,5,storecount,output);
  storecount = CountValue(current_samples,7,10,12);
  CreateInformat(10,12,storecount,output);
   printf("%s", output);
-// assert(strcmp(output,"Range, Readings\n4-5, 2\n") == 0);
   
 return 0;
   
