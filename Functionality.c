@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-#include "Functionality.h"
+#include "Implementation.h"
 
 #define checkrange(a, low, high)  (a>=low && a<=high)
 
@@ -14,8 +14,8 @@ void CreateInformat(int lowLimit,int highLimit,int counter, char* buff)
 
 void doSort(int *A,int len)
 {
-  int tmp,i,j;
- for(i=0;i<len;i++)
+  int i,j;
+ for(i=0;i<len-1;i++)
  {
    for(j=0;j<(len-i-1);j++)
    { 
@@ -28,7 +28,7 @@ void doSort(int *A,int len)
 int CountValue(int *A,int len, int low,int high)
 {
 int i,cnt = 0;
-for(i=0;i<=len;i++)
+for(i=0;i<=len-1;i++)
 {
   if(checkrange(A[i], low, high))
   {
@@ -49,4 +49,12 @@ for(i=0;i<=len;i++)
       b = tmp;
    }
  }
+
+void PerformTest(int *A,int len,int min,int max,char* buff)
+{
+  int storecount;
+  doSort(A,len);
+  storecount = CountValue(A,len,min,max);
+  CreateInformat(min,max,storecount,buff);
+}
 
